@@ -1,172 +1,157 @@
-const guitars = [
+const products = [
   {
     "index": 0,
     "category": "Guitars",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "qui ullamco anim",
-    "model": "S863",
-    "price": 1346.859,
-    "description": "Exercitation proident id amet adipisicing velit ullamco officia id ad reprehenderit. Exercitation pariatur consectetur eu veniam dolore eu adipisicing dolor elit Lorem dolore eu ex enim. Amet enim officia irure sunt incididunt id sunt eu ex amet do eiusmod sit duis."
+    "subcategory": "Electro",
+    "name": "occaecat veniam",
+    "model": "X683",
+    "price": 775,
+    "description": "Veniam aliqua incididunt nulla sint sit do ullamco magna. Sit aliqua dolor eu veniam incididunt excepteur excepteur. Exercitation ipsum duis Lorem non laboris sit minim dolore consequat officia."
   },
   {
     "index": 1,
-    "category": "Guitars",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "ex et sunt",
-    "model": "T785",
-    "price": 977.797,
-    "description": "Sit mollit eu excepteur aliquip deserunt minim anim elit sunt pariatur id amet aliquip. Ipsum laborum est fugiat cillum laboris consectetur incididunt veniam veniam enim. Velit exercitation incididunt et do tempor quis minim occaecat ex."
+    "category": "Combo",
+    "subcategory": "Hybrid",
+    "name": "consequat dolor",
+    "model": "B164",
+    "price": 135,
+    "description": "Est non commodo elit velit do exercitation pariatur eiusmod anim ad deserunt. Laborum velit ipsum fugiat ad qui proident laboris. Sint qui qui amet ipsum culpa fugiat sit ut laboris aliquip irure tempor."
   },
   {
     "index": 2,
     "category": "Guitars",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "eu minim voluptate",
-    "model": "B977",
-    "price": 1564.964,
-    "description": "Irure ullamco cupidatat dolor aliquip exercitation ipsum nisi dolor. Labore ipsum nostrud veniam sunt cillum ipsum officia deserunt. Dolor quis pariatur sit ut deserunt laborum excepteur pariatur non reprehenderit voluptate ea velit."
+    "subcategory": "Acoustic",
+    "name": "Gibson Les Paul",
+    "model": "C100",
+    "price": 171,
+    "description": "Excepteur non voluptate enim esse commodo voluptate veniam pariatur. Ut exercitation deserunt est non adipisicing adipisicing fugiat excepteur qui fugiat. Incididunt exercitation ea voluptate minim laboris minim anim ipsum deserunt."
   },
   {
     "index": 3,
-    "category": "Guitars",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "irure proident cillum",
-    "model": "T574",
-    "price": 274.663,
-    "description": "Ullamco est ipsum mollit excepteur mollit quis incididunt consequat commodo cillum enim. Incididunt officia duis qui dolore minim occaecat labore est dolor fugiat. Esse minim fugiat consectetur cupidatat proident velit Lorem aliqua tempor eiusmod reprehenderit do ex."
+    "category": "Pedals",
+    "subcategory": "Chorus",
+    "name": "tempor irure",
+    "model": "X522",
+    "price": 825,
+    "description": "Irure adipisicing mollit incididunt velit excepteur ipsum exercitation irure commodo. Culpa officia mollit deserunt aute. Duis anim mollit enim occaecat cillum nulla aute veniam velit aute aliqua exercitation fugiat."
   },
   {
     "index": 4,
-    "category": "Guitars",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "id dolore fugiat",
-    "model": "B689",
-    "price": 1953.723,
-    "description": "Ea eu ullamco non nisi quis fugiat in culpa laborum qui est nisi elit. Culpa nostrud sit et nulla qui mollit nostrud nisi labore irure. Laboris officia voluptate fugiat velit cillum commodo nisi officia voluptate commodo consectetur aliqua adipisicing minim."
+    "category": "Combo",
+    "subcategory": "Transistor",
+    "name": "dolor Lorem",
+    "model": "X893",
+    "price": 988,
+    "description": "Adipisicing deserunt aliquip et adipisicing. Laborum excepteur deserunt labore adipisicing do laborum irure anim qui occaecat ad veniam. Sit ut velit voluptate occaecat fugiat adipisicing mollit officia ipsum ea excepteur non."
   },
   {
     "index": 5,
-    "category": "Guitars",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "consectetur ex occaecat",
-    "model": "T371",
-    "price": 130.741,
-    "description": "Commodo dolore sit tempor officia ullamco. Incididunt veniam exercitation eu laboris. Non minim ad fugiat ea magna excepteur dolore nostrud commodo consectetur."
-  }
-];
-
-const pedals = [
+    "category": "Combo",
+    "subcategory": "Transistor",
+    "name": "est in",
+    "model": "C650",
+    "price": 202,
+    "description": "Sint aliquip eiusmod adipisicing consequat reprehenderit officia excepteur tempor eu labore ex dolor. Eu sunt duis pariatur dolore quis. Aliqua velit culpa magna aliquip aliquip deserunt do pariatur deserunt anim non cillum."
+  },
   {
     "index": 6,
-    "category": "Pedals",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "ea id labore",
-    "model": "S532",
-    "price": 1468.32,
-    "description": "Sit laborum voluptate sit veniam quis qui consequat magna aute deserunt ea fugiat ipsum. Mollit eiusmod consequat Lorem exercitation minim pariatur duis irure ex commodo enim anim Lorem Lorem. Nulla ea qui quis commodo consequat proident laboris incididunt anim enim ea aliqua amet exercitation."
+    "category": "Guitars",
+    "subcategory": "Bass",
+    "name": "labore adipisicing",
+    "model": "X898",
+    "price": 242,
+    "description": "Esse eu fugiat minim enim amet cupidatat labore enim voluptate commodo irure magna. Sint anim do incididunt et proident. Duis cupidatat quis tempor do exercitation ullamco."
   },
   {
     "index": 7,
-    "category": "Pedals",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "ea ad consectetur",
-    "model": "T382",
-    "price": 1465.795,
-    "description": "Amet dolore in elit veniam elit occaecat nostrud. In nisi ea excepteur aliqua cillum pariatur aliquip tempor officia nulla eu est velit aute. Dolor enim commodo do amet nisi ullamco non dolore elit duis pariatur ad."
+    "category": "Guitars",
+    "subcategory": "Classic",
+    "name": "pariatur ipsum",
+    "model": "Z572",
+    "price": 719,
+    "description": "Laboris eiusmod Lorem nisi non cillum do ipsum consequat dolore. Sint minim consectetur laboris ipsum et anim tempor dolore excepteur eu. Culpa commodo occaecat ut reprehenderit nulla et excepteur esse anim tempor aute."
   },
   {
     "index": 8,
-    "category": "Pedals",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "sint mollit officia",
-    "model": "B588",
-    "price": 379.046,
-    "description": "Voluptate nulla eiusmod sint sit nulla cillum aliquip anim non consectetur. Eiusmod laboris sit magna ut proident ea sit pariatur laboris non. Ut duis adipisicing Lorem deserunt do velit sunt dolore."
+    "category": "Guitars",
+    "subcategory": "Electro",
+    "name": "aliquip amet",
+    "model": "X580",
+    "price": 849,
+    "description": "Non consectetur excepteur ipsum esse dolor culpa non cupidatat officia consectetur enim consectetur. Eiusmod proident nostrud incididunt nulla eiusmod anim anim incididunt aliqua fugiat. Ut commodo ex amet veniam non eiusmod esse adipisicing non."
   },
   {
     "index": 9,
-    "category": "Pedals",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "elit officia do",
-    "model": "S465",
-    "price": 1427.013,
-    "description": "Qui velit elit anim id est et quis ullamco qui nisi. Reprehenderit ipsum amet Lorem esse ut laboris cupidatat occaecat. Dolor esse enim et nulla voluptate officia ut officia excepteur voluptate cupidatat elit veniam."
+    "category": "Guitars",
+    "subcategory": "Electro",
+    "name": "sunt adipisicing",
+    "model": "C164",
+    "price": 617,
+    "description": "Sint cupidatat in non officia ex ipsum labore ullamco irure id. Ipsum laborum do commodo enim ea non qui non eiusmod Lorem. Nostrud aute do tempor tempor culpa consequat."
   },
   {
     "index": 10,
-    "category": "Pedals",
-    "subcategory": "<SyntaxError: missing ) after argument list>",
-    "name": "aliqua et nostrud",
-    "model": "T849",
-    "price": 586.656,
-    "description": "Excepteur sunt veniam ea ad nostrud duis nisi officia sint laboris duis mollit. Officia aliquip ad laborum do ea officia labore. Esse ipsum ad ipsum Lorem enim eiusmod id ullamco ad duis."
-  }
-];
-
-const combo = [
+    "category": "Combo",
+    "subcategory": "Lamp",
+    "name": "mollit eiusmod",
+    "model": "Z459",
+    "price": 311,
+    "description": "Sint culpa cillum minim est in amet ex Lorem culpa proident reprehenderit culpa fugiat sit. Esse veniam qui consectetur laboris reprehenderit labore dolore nostrud consequat ex reprehenderit eu Lorem ad. Sunt sint enim incididunt irure exercitation."
+  },
+  {
+    "index": 11,
+    "category": "Guitars",
+    "subcategory": "Electro",
+    "name": "reprehenderit proident",
+    "model": "X859",
+    "price": 561,
+    "description": "Amet aute excepteur aliqua laborum. Pariatur eiusmod cupidatat sunt ut eiusmod ipsum esse sint dolore mollit laborum. Aliquip ad ad anim est quis non qui tempor irure adipisicing officia enim."
+  },
   {
     "index": 12,
-    "category": "Combo",
-    "subcategory": "Hybrid",
-    "name": "magna ipsum nostrud",
-    "model": "B255",
-    "price": 1999.577,
-    "description": "Qui minim dolore dolor ut ex occaecat. Irure deserunt deserunt ipsum quis veniam aliquip qui. Elit dolore laborum magna culpa est sunt ut eiusmod Lorem magna elit ex."
+    "category": "Guitars",
+    "subcategory": "Electro",
+    "name": "sunt proident",
+    "model": "C585",
+    "price": 413,
+    "description": "Ut laborum id nulla sit id reprehenderit labore ullamco sunt aliqua proident dolore eu sint. Sunt consectetur irure amet voluptate ea in proident. Sunt consequat fugiat eu esse deserunt sint dolore ea veniam adipisicing nisi incididunt."
   },
   {
     "index": 13,
-    "category": "Combo",
-    "subcategory": "Lamp",
-    "name": "non sit dolor",
-    "model": "B797",
-    "price": 672.746,
-    "description": "Ut esse est aliqua tempor ut aliqua ea incididunt sit eu do. Laboris laborum consequat laboris elit nisi id. Proident in duis elit excepteur anim velit incididunt."
+    "category": "Pedals",
+    "subcategory": "Wah-Wah",
+    "name": "do in",
+    "model": "X782",
+    "price": 556,
+    "description": "Do velit nulla et nostrud incididunt cillum sit quis tempor anim sint est. Non velit dolor aliqua dolore aute consectetur aliqua esse laborum esse qui. Lorem cupidatat voluptate non nisi sit tempor veniam deserunt sit exercitation fugiat voluptate ex."
   },
   {
     "index": 14,
     "category": "Combo",
     "subcategory": "Transistor",
-    "name": "adipisicing cupidatat mollit",
-    "model": "T916",
-    "price": 1513.314,
-    "description": "Magna do cillum duis proident minim proident laborum. Et ut sint ad irure commodo dolor dolor ex incididunt esse mollit voluptate adipisicing. Do ipsum dolor tempor commodo et reprehenderit sint ea duis ut."
+    "name": "culpa excepteur",
+    "model": "Z946",
+    "price": 104,
+    "description": "Elit fugiat enim ut ut nostrud consequat occaecat. Lorem quis esse est culpa sit. Proident deserunt dolore exercitation et id enim veniam aliqua mollit."
   },
   {
     "index": 15,
-    "category": "Combo",
-    "subcategory": "Lamp",
-    "name": "adipisicing ad esse",
-    "model": "B366",
-    "price": 1589.763,
-    "description": "Aliquip pariatur incididunt ad occaecat. Esse dolor id dolore non. Ea nulla elit amet et excepteur aliqua aliquip."
+    "category": "Pedals",
+    "subcategory": "Delay",
+    "name": "fugiat labore",
+    "model": "X102",
+    "price": 769,
+    "description": "Cillum exercitation anim cupidatat aliqua irure labore proident sint anim reprehenderit tempor consequat laborum esse. Aute id elit aliquip cillum qui esse. Laborum est labore id sit irure mollit ad elit mollit laboris est excepteur enim consectetur."
   },
   {
     "index": 16,
-    "category": "Combo",
-    "subcategory": "Hybrid",
-    "name": "ullamco ullamco dolore",
-    "model": "S358",
-    "price": 1675.106,
-    "description": "Nisi sit veniam dolor est excepteur. Fugiat eu dolore nisi Lorem commodo est eu exercitation officia labore cillum aliqua eiusmod ipsum. Irure magna eu non anim minim officia fugiat consequat reprehenderit ad officia."
-  },
-  {
-    "index": 17,
-    "category": "Combo",
-    "subcategory": "Transistor",
-    "name": "labore elit nulla",
-    "model": "S235",
-    "price": 1395.018,
-    "description": "Eiusmod duis deserunt non labore quis consectetur cillum reprehenderit sunt Lorem exercitation aliqua sunt. Nulla magna ipsum fugiat veniam. Amet esse labore laborum eu laboris mollit minim sint anim aliqua laborum."
-  },
-  {
-    "index": 18,
-    "category": "Combo",
-    "subcategory": "Transistor",
-    "name": "culpa fugiat aute",
-    "model": "T147",
-    "price": 1257.277,
-    "description": "Fugiat nisi sit non consequat occaecat aute in Lorem consectetur ullamco consectetur. Culpa culpa labore officia amet dolore sint id id. Nisi magna irure nisi nulla quis labore ut."
+    "category": "Guitars",
+    "subcategory": "Acoustic",
+    "name": "culpa nostrud",
+    "model": "B533",
+    "price": 765,
+    "description": "Dolor elit ut ipsum sint laborum ipsum. Fugiat esse occaecat eu eiusmod magna do et incididunt. Veniam do adipisicing commodo velit nulla adipisicing id velit."
   }
 ];
 
-export { guitars, pedals, combo };
+export { products };

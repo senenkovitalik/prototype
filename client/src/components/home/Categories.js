@@ -41,8 +41,9 @@ class Categories extends React.Component {
                 cat.children.map((child, index) => {
                   return <li key={index}>
                     <NavLink to={`/${cat.name}/${child}`}
-                             activeStyle={activeLink}
-                    >{child}</NavLink></li>
+                             activeStyle={activeLink}>
+                      {child}
+                    </NavLink></li>
                 })
               }
             </ul>

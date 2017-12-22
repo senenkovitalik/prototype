@@ -6,7 +6,8 @@
   "scripts": {
     "dev_client": "webpack --watch --config client/webpack.dev.js",
     "dev_server": "webpack --watch --config server/webpack.dev.js",
-    "server": "nodemon server/dist/index.js localhost 80"
+    "server": "nodemon server/dist/index.js localhost 80",
+    "dev": "concurrently --kill-others \"npm run dev_server\" \"npm run server\" \"npm run dev_client\" "
   },
   "author": "",
   "license": "ISC",
