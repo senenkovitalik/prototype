@@ -20,7 +20,6 @@ class ProductContainer extends React.Component {
       return res.json();
     })
     .then((p) => {
-      console.log(p);
       this.setState({
         product: p
       })
@@ -29,7 +28,7 @@ class ProductContainer extends React.Component {
 
   render() {
     return (
-      <Product p={this.state.product} />
+      <Product p={this.state.product} history={this.props.history} />
     );
   }
 }

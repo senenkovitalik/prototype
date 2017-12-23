@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import { collectInitial } from 'node-style-loader/collect';
 import { StaticRouter } from 'react-router';
 import App from '../../client/src/components/App';
 
@@ -31,12 +32,14 @@ app.use((req, res) => {
     });
     res.end();
   } else {
+    const initialStyleTag = collectInitial();
     res.write(`
       <!DOCTYPE html>
       <html>
         <head>
           <meta charset="UTF-8">
           <title>GuitarShop</title>
+          ${initialStyleTag}
         </head>
         <body>
           <div id="app">${html}</div>

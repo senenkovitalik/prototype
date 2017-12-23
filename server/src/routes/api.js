@@ -18,7 +18,6 @@ router.route('/:category')
 
 router.route('/:category/:child')
   .get((req, res) => {
-    console.log(req.params.category, req.params.child);
     res.json(_.filter( products, { "category": req.params.category, "subcategory": req.params.child }) );
   });
 

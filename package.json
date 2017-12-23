@@ -7,7 +7,7 @@
     "dev_client": "webpack --watch --config client/webpack.dev.js",
     "dev_server": "webpack --watch --config server/webpack.dev.js",
     "server": "nodemon server/dist/index.js localhost 80",
-    "dev": "concurrently --kill-others \"npm run dev_server\" \"npm run server\" \"npm run dev_client\" "
+    "dev": "concurrently --kill-others \"npm run dev_client\" \"npm run dev_server\" \"npm run server\" "
   },
   "author": "",
   "license": "ISC",
@@ -25,7 +25,11 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.7",
     "html-webpack-plugin": "^2.30.1",
-    "react-dom": "^16.2.0"
+    "node-style-loader": "0.0.1-alpha",
+    "react-dom": "^16.2.0",
+    "style-loader": "^0.19.1"
   }
 }

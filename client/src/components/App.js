@@ -16,10 +16,12 @@ class App extends React.Component {
       <div>
         <Header />
         <Switch>
-          {/*<Route component={Home} />*/}
-          <Route exact path='/:category' component={({location}) => <ListContainer url={`/api${location.pathname}`} /> } />
-          <Route exact path='/:category/:child' component={({location}) => <ListContainer url={`/api${location.pathname}`} /> }/>
-          <Route exact path="/:category/:child/:name/:model" component={({location}) => <ProductContainer url={`/api${location.pathname}`} /> } />
+          {/* Maybe it's stupid, but it works!) */}
+          <Route exact path='/' component={Home} />
+          <Route exact path='/:category' component={Home} />
+          <Route exact path='/:category/:child' component={Home} />
+          <Route exact path="/:category/:child/:name/:model" component={(props) => <ProductContainer url={`/api${props.location.pathname}`}
+                                                                                                     history={props.history} /> } />
         </Switch>
         <Footer/>
       </div>

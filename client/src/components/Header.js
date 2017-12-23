@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
   render() {
@@ -6,7 +7,7 @@ class Header extends React.Component {
       <div style={{backgroundColor: 'yellow'}}>
         <h2>Header</h2>
         <ul>
-          <li>Home</li>
+          <li><NavLink to="/">Home</NavLink></li>
           <li>About</li>
         </ul>
       </div>
