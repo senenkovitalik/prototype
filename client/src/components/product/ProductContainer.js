@@ -28,7 +28,9 @@ class ProductContainer extends React.Component {
 
   render() {
     return (
-      <Product p={this.state.product} history={this.props.history} />
+      <Product p={this.state.product}
+               history={this.props.history}
+               store={this.props.store} />
     );
   }
 }

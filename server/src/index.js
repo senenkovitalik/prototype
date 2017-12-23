@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { collectInitial } from 'node-style-loader/collect';
 import { StaticRouter } from 'react-router';
-import App from '../../client/src/components/App';
+import AppContainer from '../../client/src/components/app/AppContainer';
 
 import api from './routes/api';
 
@@ -22,7 +22,7 @@ app.use((req, res) => {
       location={req.url}
       context={context}
     >
-      <App/>
+      <AppContainer />
     </StaticRouter>
   );
 

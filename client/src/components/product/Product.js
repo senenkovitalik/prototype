@@ -6,7 +6,10 @@ const Product = (props) => (
     <h3>{props.p.name} {props.p.model}</h3>
     <p>{props.p.description}</p>
     <p>Price: {props.p.price}</p>
-    <button type="button">Buy</button><br/>
+    <button type="button" onClick={(e) => {
+        e.preventDefault();
+        props.store.add(props.p);
+    }}>Buy</button><br/>
     <span onClick={() => props.history.goBack()} className="backLink">Back to shopping</span>
   </div>
 );

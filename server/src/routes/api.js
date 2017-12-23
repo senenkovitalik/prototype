@@ -17,7 +17,6 @@ router.route('/random')
         };
 
         prods = _.concat(prods, (_.slice(_.filter(products, cond), 0, 3)));
-        // console.log(prods);
       });
     });
 
