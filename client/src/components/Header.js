@@ -9,6 +9,11 @@ class Header extends React.Component {
         <ul>
           <li><NavLink to="/">Home</NavLink></li>
           <li>About</li>
+          <li><NavLink to={{
+            pathname: `/basket`,
+            // this is the trick!
+            state: { modal: true }
+          }}>Basket</NavLink></li>
         </ul>
       </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import store from './Store';
+import { Route } from 'react-router-dom';
 import App from "./App";
 
 class AppContainer extends React.Component {
@@ -13,7 +14,7 @@ class AppContainer extends React.Component {
 
   render() {
     return (
-      <App store={this.state.store} />
+     <Route component={(props) => <App store={this.state.store} {...props} /> } />
     );
   }
 }
