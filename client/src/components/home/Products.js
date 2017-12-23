@@ -9,6 +9,7 @@ class Products extends React.Component {
   render() {
     return (
       <Switch>
+        <Route exact path='/' component={() => <ListContainer url={`/api/random`} />} />
         <Route exact path='/:category' component={({location}) => <ListContainer url={`/api${location.pathname}`} /> } />
         <Route exact path='/:category/:child'  component={({location}) => <ListContainer url={`/api${location.pathname}`} /> }/>
       </Switch>

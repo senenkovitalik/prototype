@@ -6,6 +6,24 @@ import _ from 'lodash';
 import categories from '../db/categories';
 import { products } from '../db/products';
 
+router.route('/random')
+  .get((req, res) => {
+    let prods = [];
+    categories.forEach((category) => {
+      category.children.forEach((child) => {
+        const cond = {
+          "category": category.name,
+          "subcategory": child
+        };
+
+        prods = _.concat(prods, (_.slice(_.filter(products, cond), 0, 3)));
+        // console.log(prods);
+      });
+    });
+
+    res.json(prods);
+  });
+
 router.route('/categories')
   .get((req, res) => {
     res.json(categories);
