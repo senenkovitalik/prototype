@@ -14,7 +14,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.previousLocation = this.props.location;
-    console.log(this.props.location);
   }
 
   componentWillUpdate(nextProps) {
@@ -36,10 +35,14 @@ class App extends React.Component {
       this.previousLocation !== location // not initial render
     );
 
+    // console.log('state: ', location.state);
+    // console.log("isModal: ", isModal);
+    // console.log("previousLocation: ", this.previousLocation);
+
     return (
       <div>
         <Header />
-        <Switch location={isModal ? this.state.previousLocation : location}>
+        <Switch location={isModal ? this.previousLocation : location}>
           {/* Maybe it's stupid, but it works!) */}
           <Route exact path='/' component={() => <Home store={this.props.store} /> } />
           <Route exact path='/:category' component={Home} />

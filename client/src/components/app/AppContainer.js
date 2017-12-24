@@ -14,7 +14,7 @@ class AppContainer extends React.Component {
 
   render() {
     return (
-     <Route component={(props) => <App store={this.state.store} {...props} /> } />
+     <Route render={(props) => <App store={this.state.store} {...props} /> } />
     );
   }
 }
