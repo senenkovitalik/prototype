@@ -13,7 +13,7 @@ const Basket = (props) => {
 
   return (
     <div
-      // onClick={back}
+      onClick={back}
       style={{
         position: 'absolute',
         top: 0,
@@ -23,14 +23,18 @@ const Basket = (props) => {
         background: 'rgba(0, 0, 0, 0.15)'
       }}
     >
-      <div className='modal' style={{
-        position: 'absolute',
-        background: '#fff',
-        top: 25,
-        left: '10%',
-        right: '10%',
-        padding: 15,
-        border: '2px solid #444'
+      <div className='modal'
+           onClick={(e) => {
+             e.stopPropagation();
+           }}
+           style={{
+            position: 'absolute',
+            background: '#fff',
+            top: 25,
+            left: '10%',
+            right: '10%',
+            padding: 15,
+            border: '2px solid #444'
       }}>
         <h1>Basket</h1>
         {

@@ -40,19 +40,20 @@ class App extends React.Component {
         <Header />
         <Switch location={isModal ? this.previousLocation : location}>
           {/* Maybe it's stupid, but it works!) */}
-          <Route exact path='/' component={() => <Home /> } />
-          <Route exact path='/:category' component={Home} />
-          <Route exact path='/:category/:child' component={Home} />
+          <Route exact path='/' render={() => <Home /> } />
+          <Route exact path='/:category' render={() => <Home /> } />
+          <Route exact path='/:category/:child' render={() => <Home /> } />
           <Route exact path="/:category/:child/:name/:model"
-                 component={(props) => <ProductContainer url={`/api${props.location.pathname}`}
-                                                         history={props.history}
-                                                         products={this.props.products}
-                                                         add={this.props.add} /> } />
+                 render={(props) => <ProductContainer url={`/api${props.location.pathname}`}
+                                                      history={props.history}
+                                                      products={this.props.products}
+                                                      add={this.props.add} /> } />
         </Switch>
         {isModal ? <Route path='/basket'
-                          component={(props) => <Basket products={this.props.products}
-                                                        remove={this.props.remove}
-                                                        {...props} /> }/> : null}
+                          render={(props) => <Basket products={this.props.products}
+                                                     remove={this.props.remove}
+                                                     {...props} /> }/>
+          : null}
         <Footer/>
       </div>
     );
