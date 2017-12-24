@@ -30,7 +30,7 @@ class ProductContainer extends React.Component {
     return (
       <Product p={this.state.product}
                history={this.props.history}
-               store={this.props.store} />
+               add={this.props.add} />
     );
   }
 }

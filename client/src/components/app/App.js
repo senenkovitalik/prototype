@@ -35,24 +35,24 @@ class App extends React.Component {
       this.previousLocation !== location // not initial render
     );
 
-    // console.log('state: ', location.state);
-    // console.log("isModal: ", isModal);
-    // console.log("previousLocation: ", this.previousLocation);
-
     return (
       <div>
         <Header />
         <Switch location={isModal ? this.previousLocation : location}>
           {/* Maybe it's stupid, but it works!) */}
-          <Route exact path='/' component={() => <Home store={this.props.store} /> } />
+          <Route exact path='/' component={() => <Home /> } />
           <Route exact path='/:category' component={Home} />
           <Route exact path='/:category/:child' component={Home} />
           <Route exact path="/:category/:child/:name/:model"
                  component={(props) => <ProductContainer url={`/api${props.location.pathname}`}
                                                          history={props.history}
-                                                         store={this.props.store} /> } />
+                                                         products={this.props.products}
+                                                         add={this.props.add} /> } />
         </Switch>
-        {isModal ? <Route path='/basket' component={Basket} /> : null}
+        {isModal ? <Route path='/basket'
+                          component={(props) => <Basket products={this.props.products}
+                                                        remove={this.props.remove}
+                                                        {...props} /> }/> : null}
         <Footer/>
       </div>
     );

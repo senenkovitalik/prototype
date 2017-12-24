@@ -1,14 +1,19 @@
 import React from 'react';
 
-const Basket = ({history}) => {
+const Basket = (props) => {
   const back = (e) => {
     e.stopPropagation();
-    history.goBack();
+    props.history.goBack();
+  };
+
+  const remove = (e, product) => {
+    e.preventDefault();
+    props.store.remove(product);
   };
 
   return (
     <div
-      onClick={back}
+      // onClick={back}
       style={{
         position: 'absolute',
         top: 0,
@@ -28,6 +33,23 @@ const Basket = ({history}) => {
         border: '2px solid #444'
       }}>
         <h1>Basket</h1>
+        {
+          props.products.map((prod, i) =>
+            <ul key={i}>
+              <li>Category: {prod.category}</li>
+              <li>Subcategory: {prod.subcategory}</li>
+              <li>Name: {prod.name}</li>
+              <li>Model: {prod.model}</li>
+              <li>Price: {prod.price}</li>
+              <button type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        props.remove(prod);
+                      }}
+              >Remove</button>
+            </ul>
+          )
+        }
         <button type='button' onClick={back}>
           Close
         </button>

@@ -8,7 +8,7 @@ const Product = (props) => (
     <p>Price: {props.p.price}</p>
     <button type="button" onClick={(e) => {
         e.preventDefault();
-        props.store.add(props.p);
+        props.add(props.p);
     }}>Buy</button><br/>
     <span onClick={() => props.history.goBack()} className="backLink">Back to shopping</span>
   </div>
