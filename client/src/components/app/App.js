@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 
 import Header from '../Header';
@@ -41,6 +42,7 @@ class App extends React.Component {
         <Switch location={isModal ? this.previousLocation : location}>
           {/* Maybe it's stupid, but it works!) */}
           <Route exact path='/' render={() => <Home /> } />
+          <Redirect from='/basket' to='/' />  // when we open basket and reload page
           <Route exact path='/:category' render={() => <Home /> } />
           <Route exact path='/:category/:child' render={() => <Home /> } />
           <Route exact path="/:category/:child/:name/:model"
