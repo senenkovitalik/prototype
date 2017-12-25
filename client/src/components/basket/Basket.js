@@ -6,11 +6,6 @@ const Basket = (props) => {
     props.history.goBack();
   };
 
-  const remove = (e, product) => {
-    e.preventDefault();
-    props.store.remove(product);
-  };
-
   return (
     <div
       onClick={back}
@@ -38,22 +33,45 @@ const Basket = (props) => {
       }}>
         <h1>Basket</h1>
         {
-          props.products.map((prod, i) =>
-            <ul key={i}>
-              <li>Category: {prod.category}</li>
-              <li>Subcategory: {prod.subcategory}</li>
-              <li>Name: {prod.name}</li>
-              <li>Model: {prod.model}</li>
-              <li>Price: {prod.price}</li>
+          props.products.map((p, i) =>
+            <div key={i}>
+              <ul>
+                <li>Category: {p.product.category}</li>
+                <li>Subcategory: {p.product.subcategory}</li>
+                <li>Name: {p.product.name}</li>
+                <li>Model: {p.product.model}</li>
+                <li>Price: {p.product.price}</li>
+              </ul>
+
               <button type="button"
                       onClick={(e) => {
                         e.preventDefault();
-                        props.remove(prod);
+                        props.changeCount(p, true);
+                      }}
+              >+</button>
+
+              <span>{p.count}</span>
+
+              <button type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        props.changeCount(p, false);
+                      }}
+              >-</button>
+
+              <br />
+              <button type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        props.remove(p);
                       }}
               >Remove</button>
-            </ul>
+
+              <hr />
+            </div>
           )
         }
+
         <button type='button' onClick={back}>
           Close
         </button>

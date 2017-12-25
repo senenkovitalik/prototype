@@ -66,6 +66,7 @@ class App extends React.Component {
         {isModal ? <Route path='/basket'
                           render={(props) => <Basket products={this.props.products}
                                                      remove={this.props.remove}
+                                                     changeCount={this.props.changeCount}
                                                      {...props} /> }/>
           : null}
         <Footer/>
