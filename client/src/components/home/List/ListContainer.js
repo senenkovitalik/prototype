@@ -43,10 +43,10 @@ class ListContainer extends React.Component {
       <div>
         <p>List of products</p>
         {
-          this.state.products.map((prod, i) =>
+          this.state.products.map((p, i) =>
             <ProductItem key={i}
-                         product={prod}
-                         inBasket={!!_.find(this.props.prodsInBasket, prod)}
+                         product={p}
+                         inBasket={!!_.find(this.props.prodsInBasket, { 'product': p })}
                          add={this.props.add} />
           )
         }
