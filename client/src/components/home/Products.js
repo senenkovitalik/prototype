@@ -15,13 +15,13 @@ class Products extends React.Component {
     return (
       <Switch>
         <Route exact path='/'
-               component={() => <ListContainer url={`/api/random`} {...sameProps} />} />
+               render={() => <ListContainer url={`/api/random`} {...sameProps} />} />
 
         <Route exact path='/:category'
-               component={({location}) => <ListContainer url={`/api${location.pathname}`} {...sameProps} /> } />
+               render={({location}) => <ListContainer url={`/api${location.pathname}`} {...sameProps} /> } />
 
         <Route exact path='/:category/:child'
-               component={({location}) => <ListContainer url={`/api${location.pathname}`} {...sameProps} /> }/>
+               render={({location}) => <ListContainer url={`/api${location.pathname}`} {...sameProps} /> }/>
       </Switch>
     );
   }

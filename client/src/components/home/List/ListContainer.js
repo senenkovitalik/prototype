@@ -8,10 +8,22 @@ class ListContainer extends React.Component {
     super(props);
     this.state = {
       products: []
-    }
+    };
+
+    this.fetchProducts = this.fetchProducts.bind(this);
   }
 
   componentDidMount() {
+    this.fetchProducts();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.url !== this.props.url) {
+      this.fetchProducts();
+    }
+  }
+
+  fetchProducts() {
     fetch(this.props.url)
     .then((res) => {
       if (res.status >= 400) {
