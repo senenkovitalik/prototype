@@ -7,8 +7,9 @@ import {
 
 import Header from '../Header';
 import Home from "../home/Home";
-import ProductContainer from '../product/ProductContainer';
 import Basket from '../basket/Basket';
+import ProductContainer from '../product/ProductContainer';
+import About from '../About';
 import Footer from "../Footer";
 
 class App extends React.Component {
@@ -43,6 +44,7 @@ class App extends React.Component {
           {/* Maybe it's stupid, but it works!) */}
           <Route exact path='/' render={() => <Home /> } />
           <Redirect from='/basket' to='/' />  // when we open basket and reload page
+          <Route path="/about" render={() => <About />} />
           <Route exact path='/:category' render={() => <Home /> } />
           <Route exact path='/:category/:child' render={() => <Home /> } />
           <Route exact path="/:category/:child/:name/:model"
