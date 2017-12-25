@@ -7,11 +7,21 @@ import ListContainer from "./List/ListContainer";
 
 class Products extends React.Component {
   render() {
+    const sameProps = {
+      prodsInBasket: this.props.prodsInBasket,
+      add: this.props.add
+    };
+
     return (
       <Switch>
-        <Route exact path='/' component={() => <ListContainer url={`/api/random`} />} />
-        <Route exact path='/:category' component={({location}) => <ListContainer url={`/api${location.pathname}`} /> } />
-        <Route exact path='/:category/:child'  component={({location}) => <ListContainer url={`/api${location.pathname}`} /> }/>
+        <Route exact path='/'
+               component={() => <ListContainer url={`/api/random`} {...sameProps} />} />
+
+        <Route exact path='/:category'
+               component={({location}) => <ListContainer url={`/api${location.pathname}`} {...sameProps} /> } />
+
+        <Route exact path='/:category/:child'
+               component={({location}) => <ListContainer url={`/api${location.pathname}`} {...sameProps} /> }/>
       </Switch>
     );
   }

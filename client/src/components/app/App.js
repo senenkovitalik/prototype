@@ -37,16 +37,26 @@ class App extends React.Component {
       this.previousLocation !== location // not initial render
     );
 
+    const sameProps = {
+      prodsInBasket: this.props.products,
+      add: this.props.add
+    };
+
     return (
       <div>
         <Header />
         <Switch location={isModal ? this.previousLocation : location}>
           {/* Maybe it's stupid, but it works!) */}
-          <Route exact path='/' render={() => <Home /> } />
+          <Route exact path='/' render={() => <Home {...sameProps} /> } />
+
           <Redirect from='/basket' to='/' />  // when we open basket and reload page
+
           <Route path="/about" render={() => <About />} />
-          <Route exact path='/:category' render={() => <Home /> } />
-          <Route exact path='/:category/:child' render={() => <Home /> } />
+
+          <Route exact path='/:category' render={() => <Home {...sameProps} /> } />
+
+          <Route exact path='/:category/:child' render={() => <Home {...sameProps} /> } />
+
           <Route exact path="/:category/:child/:name/:model"
                  render={(props) => <ProductContainer url={`/api${props.location.pathname}`}
                                                       history={props.history}

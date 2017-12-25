@@ -1,6 +1,7 @@
 import React from 'react';
 import fetch from 'isomorphic-fetch';
-import List from './List';
+import _ from 'lodash';
+import ProductItem from './ProductItem';
 
 class ListContainer extends React.Component {
   constructor(props) {
@@ -27,7 +28,17 @@ class ListContainer extends React.Component {
 
   render() {
     return (
-      <List products={this.state.products} />
+      <div>
+        <p>List of products</p>
+        {
+          this.state.products.map((prod, i) =>
+            <ProductItem key={i}
+                         product={prod}
+                         inBasket={!!_.find(this.props.prodsInBasket, prod)}
+                         add={this.props.add} />
+          )
+        }
+      </div>
     );
   }
 }

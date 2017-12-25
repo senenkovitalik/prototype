@@ -7,7 +7,8 @@ class Home extends React.Component {
     return (
       <div>
         <Categories/>
-        <Products/>
+        <Products prodsInBasket={this.props.prodsInBasket}
+                  add={this.props.add} />
       </div>
     );
   }
