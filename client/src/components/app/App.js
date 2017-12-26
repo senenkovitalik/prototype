@@ -66,10 +66,11 @@ class App extends React.Component {
           <Route exact path='/:category/:child' render={() => <Home {...sameProps} /> } />
 
           <Route exact path="/:category/:child/:name/:model"
-                 render={(props) => <ProductContainer url={`/api${props.location.pathname}`}
-                                                      history={props.history}
-                                                      products={this.props.products}
-                                                      add={this.props.add} /> } />
+                 render={(props) =>
+                   <ProductContainer url={`/api${props.location.pathname}`}
+                                     history={props.history}
+                                     products={this.props.products}
+                                     add={this.props.add} /> } />
 
         </Switch>
         {isModal ? <Route path='/basket'

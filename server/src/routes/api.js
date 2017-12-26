@@ -2,6 +2,8 @@ import express from 'express';
 const router = express.Router();
 import _ from 'lodash';
 
+import order from './order';
+
 // something like DB
 import categories from '../db/categories';
 import { products } from '../db/products';
@@ -22,6 +24,8 @@ router.route('/random')
 
     res.json(prods);
   });
+
+router.use('/order', order);
 
 router.route('/categories')
   .get((req, res) => {
@@ -52,5 +56,6 @@ router.route('/:category/:child/:name/:model')
 
     res.json(prod);
   });
+
 
 export default router;

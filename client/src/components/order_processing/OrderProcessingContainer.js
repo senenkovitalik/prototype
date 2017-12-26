@@ -4,15 +4,45 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import fetch from 'isomorphic-fetch';
 import List from './List';
+import Forms from './Forms';
+import Summary from './Summary';
+import OrderStatus from './OrderStatus';
 
 class OrderProcessingContainer extends React.Component {
   constructor(props) {
     super(props);
     // it's bad pattern, but...
     this.state = {
-      ...this.evalTotalValues(this.props)
+      ...this.evalTotalValues(this.props),
+      orderId: ''
     };
+
+    this.sendOrder = this.sendOrder.bind(this);
+  }
+
+  sendOrder() {
+    fetch('/api/order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin', // send cookies
+      body: JSON.stringify({
+        name: 'Senenko Vitaliy',
+        phone: '0930592340',
+        delivery: 'self-checkout',
+        products: this.props.products
+      })
+    }).then(response =>
+      response.json()
+    ).then(json => {
+      console.log(json);
+      this.setState({
+        orderId: json.id
+      });
+    }).catch(ex => console.log("Parsing failed", ex));
   }
 
   evalTotalValues(props) {
@@ -33,11 +63,6 @@ class OrderProcessingContainer extends React.Component {
   }
 
   render() {
-    const confirm = (e) => {
-      e.preventDefault();
-      this.props.history.push(`${this.props.match.path}/status`);
-    };
-
     return (
       <div>
         <Switch>
@@ -45,48 +70,16 @@ class OrderProcessingContainer extends React.Component {
             <div>
               <List products={this.props.products} />
 
-              <h3>User data</h3>
-
-              <form>
-                <label>User name <input type="text" name="username" /></label><br />
-                <label>Phone <input type="tel" name="phone" /></label><br />
-                <button type="button">Accept</button>
-              </form>
+              <Forms {...this.props} sendOrder={this.sendOrder} />
 
               <hr />
 
-              <h3>Delivery</h3>
-
-              <form>
-                <label>Type of delivery
-                  <select>
-                    <option>Self-checkout</option>
-                    <option>By courier (additional fee)</option>
-                  </select>
-                </label><br />
-                <label>Address <input type="text" /></label><br />
-
-                <button type="button" onClick={confirm}>Confirm</button>
-              </form>
-
-              <hr />
-
-              <table>
-                <tbody>
-                <tr>
-                  <td>Number of products:</td>
-                  <td>{this.state.totalCount}</td>
-                </tr>
-                <tr>
-                  <td>Total price:</td>
-                  <td>{this.state.totalPrice}</td>
-                </tr>
-                </tbody>
-              </table>
-
+              <Summary totalCount={this.state.totalCount}
+                       totalPrice={this.state.totalPrice} />
             </div>
           } />
-          <Route path={`${this.props.match.path}/status`} render={() => <div>Order status</div>} />
+          <Route path={`${this.props.match.path}/status`}
+                 render={() => <OrderStatus orderId={this.state.orderId} />} />
         </Switch>
       </div>
     );

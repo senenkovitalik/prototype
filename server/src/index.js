@@ -1,6 +1,7 @@
 import express from 'express';
 const app = express();
 const path = require('path');
+import bodyParser from 'body-parser';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { collectInitial } from 'node-style-loader/collect';
@@ -8,6 +9,9 @@ import { StaticRouter } from 'react-router';
 import AppContainer from '../../client/src/components/app/AppContainer';
 
 import api from './routes/api';
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // this is used for parsing the JSON object from POST
 
 app.use('/api', api);
 
