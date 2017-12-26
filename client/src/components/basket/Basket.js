@@ -12,31 +12,35 @@ const Basket = (props) => {
     props.history.goBack();
   };
 
+  const divStyle = {
+    position: 'absolute',
+      top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    background: 'rgba(0, 0, 0, 0.15)'
+  };
+
+  const modalStyle = {
+    position: 'absolute',
+    background: '#fff',
+    top: 25,
+    left: '10%',
+    right: '10%',
+    padding: 15,
+    border: '2px solid #444'
+  };
+
   return (
     <div
       onClick={back}
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-        background: 'rgba(0, 0, 0, 0.15)'
-      }}
+      style={divStyle}
     >
       <div className='modal'
            onClick={(e) => {
              e.stopPropagation();
            }}
-           style={{
-            position: 'absolute',
-            background: '#fff',
-            top: 25,
-            left: '10%',
-            right: '10%',
-            padding: 15,
-            border: '2px solid #444'
-      }}>
+           style={modalStyle}>
         <h1>Basket</h1>
         {
           props.products.map((p, i) =>
@@ -78,7 +82,9 @@ const Basket = (props) => {
           )
         }
 
-        <button type="button" onClick={toOrder}>
+        <button type="button"
+                disabled={!props.products.length}
+                onClick={toOrder}>
           To order
         </button>
         <button type='button' onClick={back}>
