@@ -30,7 +30,10 @@ class ProductContainer extends React.Component {
   render() {
     return (
       <Product p={this.state.product}
-               inBasket={!!_.find(this.props.products, this.state.product)}
+               inBasket={!!_.find(
+                 this.props.products,
+                 { 'product': this.state.product })
+               }
                history={this.props.history}
                add={this.props.add} />
     );
