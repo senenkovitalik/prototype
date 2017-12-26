@@ -8,6 +8,7 @@ import {
 import Header from '../Header';
 import Home from "../home/Home";
 import Basket from '../basket/Basket';
+import OrderProcessingContainer from '../order_processing/OrderProcessingContainer';
 import ProductContainer from '../product/ProductContainer';
 import About from '../About';
 import Footer from "../Footer";
@@ -51,6 +52,13 @@ class App extends React.Component {
 
           <Redirect from='/basket' to='/' />  // when we open basket and reload page
 
+          <Route path="/order_processing"
+                 render={(props) =>
+                   <OrderProcessingContainer
+                     products={this.props.products}
+                     {...props} />
+                 } />
+
           <Route path="/about" render={() => <About />} />
 
           <Route exact path='/:category' render={() => <Home {...sameProps} /> } />
@@ -62,6 +70,7 @@ class App extends React.Component {
                                                       history={props.history}
                                                       products={this.props.products}
                                                       add={this.props.add} /> } />
+
         </Switch>
         {isModal ? <Route path='/basket'
                           render={(props) => <Basket products={this.props.products}

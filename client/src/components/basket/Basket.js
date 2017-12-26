@@ -1,6 +1,12 @@
 import React from 'react';
+import Link from 'react-router-dom';
 
 const Basket = (props) => {
+  const toOrder = (e) => {
+    e.stopPropagation();
+    props.history.push('/order_processing');
+  };
+
   const back = (e) => {
     e.stopPropagation();
     props.history.goBack();
@@ -72,6 +78,9 @@ const Basket = (props) => {
           )
         }
 
+        <button type="button" onClick={toOrder}>
+          To order
+        </button>
         <button type='button' onClick={back}>
           Close
         </button>
