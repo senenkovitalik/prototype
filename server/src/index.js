@@ -43,6 +43,7 @@ app.use((req, res) => {
         <head>
           <meta charset="UTF-8">
           <title>GuitarShop</title>
+          <link rel="shortcut icon" href="/favicon.ico">
           ${initialStyleTag}
         </head>
         <body>
