@@ -38,7 +38,6 @@ class OrderProcessingContainer extends React.Component {
     }).then(response =>
       response.json()
     ).then(json => {
-      console.log(json);
       this.setState({
         orderId: json.id
       });

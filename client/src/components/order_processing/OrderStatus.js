@@ -4,31 +4,38 @@ class OrderStatus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: null
+      status: false
     }
   }
 
-  componentWillReceiveProps() {
-    this.fetchStatus();
+  componentWillReceiveProps(nextProps) {
+    this.fetchStatus(nextProps.orderId);
   }
 
-  componentDidMount() {
-    this.fetchStatus();
-  }
-
-  fetchStatus() {
-    fetch(`/api/order/status/${this.props.orderId}`)
+  fetchStatus(orderId) {
+    fetch(`/api/order/status/${orderId}`)
     .then(response => response.json())
     .then(json => {
-      console.log(json);
-    }).catch(ex => console.log("Exception: ", ex));
+      this.setState({
+        status: json.status
+      });
+    }).catch(ex => {
+      console.log("Exception: ", ex);
+      this.setState({
+        status: false
+      });
+    });
   }
 
   render() {
     return (
       <div>
         <h3>Order status</h3>
-        <p>{this.props.orderId}</p>
+        {
+          !!this.state.status
+            ? <p>Your order successfully confirmed</p>
+            : <p>Sorry. Please, try later. Something happens.</p>
+        }
       </div>
     );
   }

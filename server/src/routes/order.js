@@ -12,13 +12,14 @@ router.route('/')
 router.route('/status/:id')
   .get((req, res) => {
     const result = _.find(orders, { 'id': req.params.id });
-    res.json((result === undefined) ? { result: false } : result);
+    res.json((result === undefined) ? false : result);
   });
 
-router.route('*')
+// stub route, cause /api/order/status/ => /api/:category/:child,
+// but we don't want this
+router.route('/status/')
   .get((req, res) => {
-    console.log("No match");
-    res.send("Sorry, we cannot find that");
+    res.json({ result: false });
   });
 
 export default router;
